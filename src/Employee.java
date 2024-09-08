@@ -10,7 +10,7 @@ public class Employee extends Person{
         this.hireDate = hireDate;
     }
 
-    //comment
+    //com
 
     public String getPosition() {
         return position;
