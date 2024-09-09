@@ -1,1 +1,3 @@
-Sprint III Projeto integrado II Classes implementadas em java, Sistema RH
+##Sprint III  Classes implementadas em java, Sistema RH
+##Disciplina: Projeto integrado II
+##Equipe: Pedro Henrique Catarina Nogueira, Lucas Araujo Lopes
