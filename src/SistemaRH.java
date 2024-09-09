@@ -13,6 +13,21 @@ public class SistemaRH {
         gerenciador.listEmployee();
         gerenciador.updateEmployee(2,"João","support",800);
 
+        Employee employee= gerenciador.getEmployeeById(2);
+        employee.scorePoint();
+        //solicitar férias
+        employee.requestVacation("de 09 a 30 de setembro");
+        //ver solicitações
+        employee.getHistoricVacation();
+        //gerente aprova
+        gerenciador.manageVacation(2, true);
+        //ver solicitações
+        employee.getHistoricVacation();
+        //gerenciar contracheque
+        gerenciador.fillOutPayroll(2,5000,500);
+        //ver contracheque
+        System.out.println(employee.getPaycheck());
+
 
     }
 

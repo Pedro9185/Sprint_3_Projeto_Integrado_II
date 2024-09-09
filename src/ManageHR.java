@@ -51,7 +51,7 @@ class ManageHR {
 
     // Aprovação ou reprovação de férias
     public void manageVacation(int idEmployee, boolean approve) {
-        Employee employee = getEmployeeForId(idEmployee);
+        Employee employee = getEmployeeById(idEmployee);
         if (employee != null) {
             List<String> historicVacation = employee.getHistoricVacation();
             if (!historicVacation.isEmpty()) {
@@ -73,7 +73,7 @@ class ManageHR {
 
     //Preencher folha de pagamento
     public void fillOutPayroll(int idFuncionario, double salario, double bonus) {
-        Employee employee = getEmployeeForId(idFuncionario);
+        Employee employee = getEmployeeById(idFuncionario);
         if (employee != null) {
             Payroll sheet = new Payroll(salario, bonus);
             employee.setSalary(salario);
@@ -85,7 +85,7 @@ class ManageHR {
     }
 
     //metodo para buscar funcionário pelo ID
-    public Employee getEmployeeForId(int id) {
+    public Employee getEmployeeById(int id) {
         for (Employee employee : employees) {
             if (employee.getId() == id) {
                 return employee;
