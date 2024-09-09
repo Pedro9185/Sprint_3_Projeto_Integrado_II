@@ -5,6 +5,15 @@ public class SistemaRH {
         //Cadastrar
         gerenciador.addEmployee("Lucas", "aa", "ti", 1000);
         gerenciador.addEmployee("Maria", "bb", "ti", 2000);
+        gerenciador.addEmployee("Zé", "cc", "chefe", 5000);
+        //Listar
+        gerenciador.listEmployee();
+        //editar
+        gerenciador.updateEmployee(3, "Zé da manga","chefe", 10000);
+        //Listar
+        gerenciador.listEmployee();
+        //deletar
+        gerenciador.deleteEmployee(3);
         //Listar
         gerenciador.listEmployee();
         //Preencher folha de pagamento com alteração de de salário
