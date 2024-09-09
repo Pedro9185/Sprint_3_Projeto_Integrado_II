@@ -22,7 +22,9 @@ public class SistemaRH {
         gerenciador.listEmployee();
         gerenciador.updateEmployee(2,"João","support",800);
 
+        //FUNCIONALIDADES FUNCIONARIO
         Employee employee= gerenciador.getEmployeeById(2);
+        //Marcar ponto
         employee.scorePoint();
         //solicitar férias
         employee.requestVacation("de 09 a 30 de setembro");
