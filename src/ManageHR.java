@@ -11,19 +11,19 @@ class ManageHR {
     }
 
     //cadastrar funcionário
-    public void cadastrarFuncionario(String nome, String cargo, double salario) {
-        Employee employee = new Employee(nextId++, nome, cargo, salario);
+    public void addEmployee(String name, String position, double salary) {
+        Employee employee = new Employee(nextId++, name, position, salary);
         employees.add(employee);
         System.out.println("Funcionário cadastrado com sucesso!");
     }
 
     //editar funcionário
-    public void editarFuncionario(int id, String novoNome, String novoCargo, double novoSalario) {
+    public void updateEmployee(int id, String newName, String newPosition, double newSalary) {
         for (Employee employee : employees) {
             if (employee.getId() == id) {
-                employee.setNome(novoNome);
-                employee.setCargo(novoCargo);
-                employee.setSalario(novoSalario);
+                employee.setName(newName);
+                employee.setPosition(newPosition);
+                employee.setSalary(newSalary);
                 System.out.println("Funcionário editado com sucesso!");
                 return;
             }
@@ -32,13 +32,14 @@ class ManageHR {
     }
 
     //remover funcionário
-    public void removerFuncionario(int id) {
+    public void deleteEmployee(int id) {
         employees.removeIf(employee -> employee.getId() == id);
         System.out.println("Funcionário removido com sucesso!");
     }
 
+
     //listar todos os funcionários
-    public void listarFuncionarios() {
+    public void listEmployee() {
         if (employees.isEmpty()) {
             System.out.println("Nenhum funcionário cadastrado.");
         } else {
@@ -49,17 +50,17 @@ class ManageHR {
     }
 
     // Aprovação ou reprovação de férias
-    public void gerenciarFerias(int idFuncionario, boolean aprovar) {
-        Employee employee = buscarFuncionarioPorId(idFuncionario);
+    public void manageVacation(int idEmployee, boolean approve) {
+        Employee employee = getEmployeeForId(idEmployee);
         if (employee != null) {
-            List<String> historicoFerias = employee.getHistoricoFerias();
-            if (!historicoFerias.isEmpty()) {
-                String ultimaSolicitacao = historicoFerias.get(historicoFerias.size() - 1);
-                if (aprovar) {
-                    historicoFerias.set(historicoFerias.size() - 1, ultimaSolicitacao.replace("Aguardando aprovação", "Aprovado"));
+            List<String> historicVacation = employee.getHistoricVacation();
+            if (!historicVacation.isEmpty()) {
+                String lastRequest = historicVacation.get(historicVacation.size() - 1);
+                if (approve) {
+                    historicVacation.set(historicVacation.size() - 1, lastRequest.replace("Aguardando aprovação", "Aprovado"));
                     System.out.println("Férias aprovadas.");
                 } else {
-                    historicoFerias.set(historicoFerias.size() - 1, ultimaSolicitacao.replace("Aguardando aprovação", "Reprovado"));
+                    historicVacation.set(historicVacation.size() - 1, lastRequest.replace("Aguardando aprovação", "Reprovado"));
                     System.out.println("Férias reprovadas.");
                 }
             } else {
@@ -71,12 +72,12 @@ class ManageHR {
     }
 
     //Preencher folha de pagamento
-    public void preencherFolhaPagamento(int idFuncionario, double salario, double bonus) {
-        Employee employee = buscarFuncionarioPorId(idFuncionario);
+    public void fillOutPayroll(int idFuncionario, double salario, double bonus) {
+        Employee employee = getEmployeeForId(idFuncionario);
         if (employee != null) {
-            Payroll folha = new Payroll(salario, bonus);
-            employee.setSalario(salario);
-            employee.setContracheque(folha);
+            Payroll sheet = new Payroll(salario, bonus);
+            employee.setSalary(salario);
+            employee.setPaycheck(sheet);
             System.out.println("Folha de pagamento preenchida.");
         } else {
             System.out.println("Funcionário não encontrado.");
@@ -84,7 +85,7 @@ class ManageHR {
     }
 
     //metodo para buscar funcionário pelo ID
-    public Employee buscarFuncionarioPorId(int id) {
+    public Employee getEmployeeForId(int id) {
         for (Employee employee : employees) {
             if (employee.getId() == id) {
                 return employee;

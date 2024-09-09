@@ -5,20 +5,20 @@ import java.util.List;
 // Classe que representa um funcionário
 class Employee {
     private int id;
-    private String nome;
-    private String cargo;
-    private double salario;
-    private List<LocalDate> historicoPonto;  // Histórico de pontos
-    private List<String> historicoFerias;    // Histórico de solicitações de férias
-    private Payroll contracheque;     // Contracheque do funcionário
+    private String name;
+    private String position;
+    private double salary;
+    private List<LocalDate> historicPoint;  // Histórico de pontos
+    private List<String> historicVacation;    // Histórico de solicitações de férias
+    private Payroll paycheck;     // Contracheque do funcionário
 
-    public Employee(int id, String nome, String cargo, double salario) {
+    public Employee(int id, String name, String position, double salary) {
         this.id = id;
-        this.nome = nome;
-        this.cargo = cargo;
-        this.salario = salario;
-        this.historicoPonto = new ArrayList<>();
-        this.historicoFerias = new ArrayList<>();
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+        this.historicPoint = new ArrayList<>();
+        this.historicVacation = new ArrayList<>();
     }
 
     //getters e setters
@@ -31,62 +31,62 @@ class Employee {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getPosition() {
+        return position;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public double getSalario() {
-        return salario;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    public List<LocalDate> getHistoricoPonto() {
-        return historicoPonto;
+    public List<LocalDate> getHistoricPoint() {
+        return historicPoint;
     }
 
-    public void setHistoricoPonto(List<LocalDate> historicoPonto) {
-        this.historicoPonto = historicoPonto;
+    public void setHistoricPoint(List<LocalDate> historicPoint) {
+        this.historicPoint = historicPoint;
     }
 
-    public void setHistoricoFerias(List<String> historicoFerias) {
-        this.historicoFerias = historicoFerias;
+    public void setHistoricVacation(List<String> historicVacation) {
+        this.historicVacation = historicVacation;
     }
 
-    public List<String> getHistoricoFerias() {
-        return historicoFerias;
+    public List<String> getHistoricVacation() {
+        return historicVacation;
     }
 
-    public Payroll getContracheque() {
-        return contracheque;
+    public Payroll getPaycheck() {
+        return paycheck;
     }
 
-    public void setContracheque(Payroll contracheque) {
-        this.contracheque = contracheque;
+    public void setPaycheck(Payroll paycheck) {
+        this.paycheck = paycheck;
     }
     //metodos
-    public void marcarPonto() {
-        LocalDate hoje = LocalDate.now();
-        historicoPonto.add(hoje);
-        System.out.println("Ponto marcado com sucesso no dia " + hoje);
+    public void scorePoint() {
+        LocalDate today = LocalDate.now();
+        historicPoint.add(today);
+        System.out.println("Ponto marcado com sucesso no dia " + today);
     }
 
-    public void solicitarFerias(String periodo) {
-        historicoFerias.add("Solicitação de férias: " + periodo + " - Aguardando aprovação");
+    public void requestVacation(String period) {
+        historicVacation.add("Solicitação de férias: " + period + " - Aguardando aprovação");
         System.out.println("Solicitação de férias registrada.");
     }
 
@@ -94,6 +94,6 @@ class Employee {
     //Customizar como o objeto é mostrado quando for chamado
     @Override
     public String toString() {
-        return "ID: " + id + ", Nome: " + nome + ", Cargo: " + cargo + ", Salário: R$" + salario;
+        return "ID: " + id + ", Nome: " + name + ", Cargo: " + position + ", Salário: R$" + salary;
     }
 }
