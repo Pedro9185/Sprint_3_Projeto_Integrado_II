@@ -1,4 +1,4 @@
-package leaveAbsence;
+package services;
 
 public class Absences {
 }

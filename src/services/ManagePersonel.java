@@ -1,4 +1,4 @@
-package personnelManagement;
+package services;
 
 public class ManagePersonel {
 }

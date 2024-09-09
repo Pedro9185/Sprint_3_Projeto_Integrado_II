@@ -1,4 +1,4 @@
-package payroll;
+package services;
 
 public class Payroll {
 }
