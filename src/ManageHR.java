@@ -11,8 +11,8 @@ class ManageHR {
     }
 
     //cadastrar funcionário
-    public void addEmployee(String name, String position, double salary) {
-        Employee employee = new Employee(nextId++, name, position, salary);
+    public void addEmployee(String name,String lastName, String position, double salary) {
+        Employee employee = new Employee(nextId++, name,lastName, position, salary);
         employees.add(employee);
         System.out.println("Funcionário cadastrado com sucesso!");
     }

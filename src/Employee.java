@@ -6,15 +6,25 @@ import java.util.List;
 class Employee {
     private int id;
     private String name;
+    private String lastName;
     private String position;
     private double salary;
     private List<LocalDate> historicPoint;  // Histórico de pontos
     private List<String> historicVacation;    // Histórico de solicitações de férias
     private Payroll paycheck;     // Contracheque do funcionário
 
-    public Employee(int id, String name, String position, double salary) {
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Employee(int id, String name, String lastName, String position, double salary) {
         this.id = id;
         this.name = name;
+        this.lastName = lastName;
         this.position = position;
         this.salary = salary;
         this.historicPoint = new ArrayList<>();
