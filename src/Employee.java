@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Classe que representa um funcionário
-class Employee {
+class Employee extends Person{
 	private int id;
 	private String name;
 	private String lastName;
@@ -22,7 +22,8 @@ class Employee {
 	}
 
 	public Employee(int id, String name, String lastName, String position, double salary) {
-		this.id = id;
+        super(id,name,lastName,position);
+        this.id = id;
 		this.name = name;
 		this.lastName = lastName;
 		this.position = position;
@@ -33,27 +34,33 @@ class Employee {
 
 	//getters e setters
 
-	public int getId() {
+	@Override
+    public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	@Override
+    public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getName() {
+	@Override
+    public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	@Override
+    public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getPosition() {
+	@Override
+    public String getPosition() {
 		return position;
 	}
 
-	public void setPosition(String position) {
+	@Override
+    public void setPosition(String position) {
 		this.position = position;
 	}
 
