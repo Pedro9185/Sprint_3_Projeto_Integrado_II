@@ -3,8 +3,8 @@
 ### Disciplina: Projeto integrado II 
 
 ### Equipe:
-- Pedro Henrique Catarina Nogueira-2023010244
-- Lucas Araujo Lopes-2023010244
+- Pedro Henrique Catarina Nogueira-Matricula-2023010244
+- Lucas Araujo Lopes-Matricula-2023010244
 
 
 <p>Para o desenvolvimento desse sistema utilizamos a IDE <a target="blank" href="http://www.jetbrains.com/idea/" >InteliJ Idea</a> </p>
