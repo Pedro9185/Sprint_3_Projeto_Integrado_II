@@ -14,3 +14,5 @@
 - Polimorfismo
 - Abstração
 - Encapsulamento
+
+<a target="blank" href="https://docs.google.com/document/d/1RuHArgO7vTfSQY5XraF98aIZ2FOkSGNl/edit?usp=sharing&ouid=107764578758679270241&rtpof=true&sd=true" >Explicação das classes</a>
